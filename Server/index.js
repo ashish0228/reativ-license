@@ -2,9 +2,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const auth = require('./routes/auth');
-const user = require('./routes/auth')
+const user = require('./routes/auth');
+const cors = require('cors');
+const mongoose = require('mongoose');
 const app = express();
 
+app.use(cors());
 app.use('/auth', auth);
 app.use('/user', passport.authenticate('jwt', {session: false}), user);
 
@@ -13,9 +16,9 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 const dbConfig = require('./config/database.config');
-const mongoose = require('mongoose');
-mongoose.Promise = global.Promise;
 
+mongoose.Promise = global.Promise;
+require('./routes/user')(app);
 
 mongoose.connect(dbConfig.url, {
     useNewUrlParser: true
