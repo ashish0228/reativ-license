@@ -1,6 +1,8 @@
 const User = require('../models/user.model');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
+var jwt = require('jsonwebtoken');
+var secretKey = 'key';
 
 exports.create = (req, res) => {
     let hash = bcrypt.hashSync(req.body.password, saltRounds);
@@ -39,7 +41,10 @@ exports.login = (req, res) => {
             }
             let hash = bcrypt.compareSync(req.body.password, user.password);
             if(hash) {
-                res.send(user);
+                var token = jwt.sign({ email: user.email, role: user.role }, secretKey, {
+                    expiresIn: 86400 // expires in 24 hours
+                });
+                res.status(200).send({ message: 'Login Successfully', result: true, token: token});
             } else {
                res.send({message: 'EmailId Password not match'}) ;
             }

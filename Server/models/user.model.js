@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const Tbl_User = mongoose.Schema({
         email: String,
         password: String,
+        role: String,
         isDelete: { type: Boolean, default: false},
         isActive: { type: Boolean, default: true}
     },

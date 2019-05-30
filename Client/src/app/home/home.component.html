@@ -1,0 +1,10 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span *ngIf="authFlag" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a *ngIf="token" href="/">HOME</a></span>
+    <span class="spacer"></span>
+    <span *ngIf="!authFlag" routerLinkActive="active"><a mat-button routerLink="/register">Register</a></span>
+    <span *ngIf="!authFlag" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a mat-button routerLink="/login">Login</a></span>
+    <span *ngIf="authFlag" routerLinkActive="active"><a routerLink="/logout" >Logout</a></span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
