@@ -5,19 +5,18 @@
 
   <mat-card-content>
 
-    <form class="loginform" [formGroup]="loginForm" >
+    <form class="loginform" (ngSubmit)="onLogin()" [formGroup]="loginForm" >
       <mat-form-field class="Username">
         <input class="input" matInput placeholder="Email" id="email" formControlName="email" (keyup.enter)="onClick()">
       </mat-form-field>
 
       <mat-form-field class="Password">
-        <input  style="display:inline-block" class="input" matInput placeholder="Password" type="{{passwordFormat}}" id="password" formControlName="password" (keyup.enter)="onClick()">
+        <input  style="display:inline-block" class="input" matInput placeholder="Password" type="password" id="password" formControlName="password" (keyup.enter)="onClick()">
       </mat-form-field>
       <mat-icon *ngIf="passwordFormat == 'password'" (click)="onToggleVisibility()" style="display:inline-block;cursor: pointer;">visibility_off</mat-icon>
       <mat-icon *ngIf="passwordFormat == 'text'" (click)="onToggleVisibility()" style="display:inline-block;cursor: pointer;">visibility</mat-icon>
-
-
-
+      <button mat-raised-button  color="primary">LOGIN</button> &nbsp;
+      <a [routerLink]="['/register']">Registration</a>
     </form>
     <div class="errormessage"  >
       <div class="error" *ngIf="say!=''">{{say}}</div>

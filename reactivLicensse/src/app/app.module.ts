@@ -12,6 +12,8 @@ import {UserService} from "./service/user.service";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { LeftSideNavComponent } from './left-side-nav/left-side-nav.component';
 import {HttpClientModule} from "@angular/common/http";
+import { SearchComponent } from './search/search.component';
+import { UtilComponent } from './util/util.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import {HttpClientModule} from "@angular/common/http";
     HeaderLayerComponent,
     LoginComponent,
     RegistrationComponent,
-    LeftSideNavComponent
+    LeftSideNavComponent,
+    SearchComponent,
+    UtilComponent
   ],
   imports: [
     BrowserModule,

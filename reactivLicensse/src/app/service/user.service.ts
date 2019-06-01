@@ -18,7 +18,9 @@ export class UserService {
 
   getMenu() :Menu[] {
     return [
-      {routerlink: '/', label: 'Home', icon: 'home', isActive: true}
+      {routerlink: '/', label: 'Home', icon: 'home', isActive: true},
+      {routerlink: '/search', label: 'Search', icon: 'pageview', isActive: true},
+      {routerlink: '/util', label: 'Utilities', icon: 'offline_bolt', isActive: true}
     ] as Menu[];
   }
 }
