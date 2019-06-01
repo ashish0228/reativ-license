@@ -1,0 +1,31 @@
+<mat-card class="card">
+  <mat-card-title >
+    Login
+  </mat-card-title>
+
+  <mat-card-content>
+
+    <form class="loginform" [formGroup]="loginForm" >
+      <mat-form-field class="Username">
+        <input class="input" matInput placeholder="Email" id="email" formControlName="email" (keyup.enter)="onClick()">
+      </mat-form-field>
+
+      <mat-form-field class="Password">
+        <input  style="display:inline-block" class="input" matInput placeholder="Password" type="{{passwordFormat}}" id="password" formControlName="password" (keyup.enter)="onClick()">
+      </mat-form-field>
+      <mat-icon *ngIf="passwordFormat == 'password'" (click)="onToggleVisibility()" style="display:inline-block;cursor: pointer;">visibility_off</mat-icon>
+      <mat-icon *ngIf="passwordFormat == 'text'" (click)="onToggleVisibility()" style="display:inline-block;cursor: pointer;">visibility</mat-icon>
+
+
+
+    </form>
+    <div class="errormessage"  >
+      <div class="error" *ngIf="say!=''">{{say}}</div>
+    </div>
+
+  </mat-card-content>
+  <mat-card-actions style="float: right">
+    <a [routerLink]="['/forgotpassword']" class="signup" >Forgot Password?</a>
+    <button mat-raised-button color="primary" (click)="onClick()" style="margin-right: 15px" >NEXT</button>
+  </mat-card-actions>
+</mat-card>

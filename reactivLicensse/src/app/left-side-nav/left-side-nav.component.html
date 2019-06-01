@@ -1,0 +1,13 @@
+<a [routerLink]="[routerLink]" style="text-decoration:none" routerLinkActive="active"
+   [routerLinkActiveOptions]="{exact: true}" #hla="routerLinkActive" *ngIf="isActive">
+  <mat-list-item class="mat-list-item">
+    <div class="nav-button">
+      <div class="nav-button-icon">
+        <mat-icon class="material-icons md-48" [ngClass]="{ 'active': hla.isActive}"> {{icon}}
+        </mat-icon>
+      </div>
+      <p class="nav-button-text" [ngClass]="{ 'active': hla.isActive}">{{label}}</p>
+      <hr class="nav-button-line" [ngClass]="{ 'active': hla.isActive}">
+    </div>
+  </mat-list-item>
+</a>

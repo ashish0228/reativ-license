@@ -1,0 +1,20 @@
+.app-toolbar {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 1000;
+
+  .container {
+    min-height: 100%;
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+
+    .logo{
+      vertical-align: middle;
+      margin-top: 15px;
+      max-width: 130px;
+      height: auto;
+    }
+  }
+}
