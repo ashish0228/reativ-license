@@ -5,8 +5,8 @@
 @import '~@angular/material/theming';
 
 $general-typography: mat-typography-config(
-        $font-family: '"Open Sans", "Helvetica Neue", sans-serif',
-        $body-2:        mat-typography-level(14px, 24px, 600)
+  $font-family: '"Open Sans", "Helvetica Neue", sans-serif',
+  $body-2:        mat-typography-level(14px, 24px, 600)
 );
 
 
@@ -194,3 +194,6 @@ input {
     margin-left: 12px;
   }
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

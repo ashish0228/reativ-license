@@ -1,0 +1,29 @@
+{
+  "name": "reativ-license",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install-dep": "cd Client && npm i && cd .. && npm i",
+    "start": "node index && cd Client && ng s"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VinodChopra/reativ-license.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VinodChopra/reativ-license/issues"
+  },
+  "homepage": "https://github.com/VinodChopra/reativ-license#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.5.11",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0"
+  }
+}

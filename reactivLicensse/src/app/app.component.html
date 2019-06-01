@@ -1,0 +1,13 @@
+<app-header-layer></app-header-layer>
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened="true" #sidenav>
+    <mat-nav-list class="nav-container">
+      <app-left-side-nav *ngFor="let menu of menus" [icon]="menu.icon"
+                         [label]="menu.label" [routerlink]="menu.routerlink"
+      [isActive]="menu.isActive"></app-left-side-nav>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="content">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
