@@ -25,19 +25,17 @@ export class LoginComponent implements OnInit {
   onLogin() {
     this.submitted = true;
     if (this.loginForm.valid) {
-      console.log(this.loginForm.value)
       this.userService.loginUser(this.loginForm.value).subscribe( (res: any) => {
         if (res) {
-          console.log(res);
           localStorage.setItem('token', res.token );
           localStorage.setItem('status', res.result)
           this.router.navigate(['/']);
         } else {
-          alert( 'error');
+
         }
       });
     } else {
-      alert( 'enter data'); }
+    }
   }
 
 }

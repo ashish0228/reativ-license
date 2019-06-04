@@ -5,6 +5,7 @@ var jwt = require('jsonwebtoken');
 var secretKey = 'key';
 
 exports.create = (req, res) => {
+    console.log('in create controller');
     let hash = bcrypt.hashSync(req.body.password, saltRounds);
     req.body.password = hash;
     if(!req.body) {

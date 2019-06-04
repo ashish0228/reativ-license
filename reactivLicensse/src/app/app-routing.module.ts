@@ -7,6 +7,7 @@ import {LoginComponent} from "./user/login/login.component";
 import {RegistrationComponent} from "./user/registration/registration.component";
 import {SearchComponent} from "./search/search.component";
 import {UtilComponent} from "./util/util.component";
+import {OrganizationComponent} from "./organization/organization.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -14,7 +15,7 @@ const routes: Routes = [
   { path: 'search', component: SearchComponent},
   { path: 'register', component: RegistrationComponent},
   { path: 'util', component: UtilComponent},
-  // { path: 'login', component: LoginComponent },
+  { path: 'organization', component: OrganizationComponent},
   // { path: 'logout', component: LogoutComponent }
 ];
 

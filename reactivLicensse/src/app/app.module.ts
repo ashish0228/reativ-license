@@ -14,6 +14,7 @@ import { LeftSideNavComponent } from './left-side-nav/left-side-nav.component';
 import {HttpClientModule} from "@angular/common/http";
 import { SearchComponent } from './search/search.component';
 import { UtilComponent } from './util/util.component';
+import { OrganizationComponent } from './organization/organization.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { UtilComponent } from './util/util.component';
     RegistrationComponent,
     LeftSideNavComponent,
     SearchComponent,
-    UtilComponent
+    UtilComponent,
+    OrganizationComponent
   ],
   imports: [
     BrowserModule,

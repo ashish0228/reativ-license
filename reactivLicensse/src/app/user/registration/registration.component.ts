@@ -26,21 +26,17 @@ export class RegistrationComponent implements OnInit {
   onRegister() {
     this.submitted = true;
     if (this.registrationForm.valid) {
-      console.log('this.registrationForm.valid', this.registrationForm.value);
       const data = {
         email: this.registrationForm.value.email,
         password: this.registrationForm.value.password
       }
-      console.log('data', data);
       this.userService.userRegistration(data).subscribe((res: any )=> {
         if (res) {
-          alert('Registration Done Successfully');
+          this.router.navigate(['/login']);
         } else {
-          console.log('error no record inserted');
+          console.log('erroe', res);
         }
       });
-    } else {
-      alert('Please fill blank field');
     }
   }
 
